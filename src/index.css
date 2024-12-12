@@ -9,7 +9,16 @@
 
 }
 
+ol,
+ul {
+  list-style: none;
+}
+
 .container {
   max-width: 1024px;
   margin: 0 auto;
+}
+
+.debug {
+  border: 2px dotted red;
 }
