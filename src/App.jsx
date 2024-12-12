@@ -18,13 +18,13 @@ function App() {
       })
   }
 
-  useEffect(() => {
+  /* useEffect(() => {
     fetchResult()
-  }, [])
+  }, []) */
 
   return (
     <>
-      <GlobalContext.Provider value={{ list, setList, fetchResult }}>
+      <GlobalContext.Provider value={{ list, fetchResult }}>
         <BrowserRouter>
           <Routes>
             <Route element={<DefaultLayout />}>

@@ -4,7 +4,7 @@ import { useState } from "react"
 
 export default function Searchbar() {
     const [search, setSearch] = useState('')
-    const { setList, fetchResult } = useContext(GlobalContext)
+    const { fetchResult } = useContext(GlobalContext)
 
     function onSubmit(e) {
         e.preventDefault()
