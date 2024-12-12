@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import GlobalContext from './contexts/GlobalContext'
+import { BASE_URI, MY_TOKEN } from './config'
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
     <>
       <GlobalContext.Provider>
         <div>
-          ciao
+          CIAO
         </div>
       </GlobalContext.Provider>
     </>
