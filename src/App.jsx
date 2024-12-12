@@ -8,13 +8,17 @@ import axios from 'axios'
 
 
 function App() {
-  const [list, setList] = useState([])
+  const [filmList, setFilmList] = useState([])
+  const [seriesList, setSeriesList] = useState([])
 
   function fetchResult(parm) {
     axios.get(`${BASE_URI}search/movie?api_key=${MY_TOKEN}&query=${parm}`)
       .then(res => {
-        console.log(res.data.results)
-        setList(res.data.results)
+        setFilmList(res.data.results)
+      })
+    axios.get(`${BASE_URI}search/tv?api_key=${MY_TOKEN}&query=${parm}`)
+      .then(res => {
+        setSeriesList(res.data.results)
       })
   }
 
@@ -24,7 +28,7 @@ function App() {
 
   return (
     <>
-      <GlobalContext.Provider value={{ list, fetchResult }}>
+      <GlobalContext.Provider value={{ filmList, seriesList, fetchResult }}>
         <BrowserRouter>
           <Routes>
             <Route element={<DefaultLayout />}>

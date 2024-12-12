@@ -1,20 +1,25 @@
-import { useEffect, useState } from "react"
-import { BASE_URI, MY_TOKEN } from "../config"
-import axios from "axios"
 import GlobalContext from "../contexts/GlobalContext"
 import { useContext } from "react"
 import Card from "../components/Card"
 
 export default function Content() {
-    const { list } = useContext(GlobalContext)
-    console.log('log nel content', list)
+    const { filmList, seriesList } = useContext(GlobalContext)
 
     return (
 
         <div className="container debug">
-            <ul>
+            <ul> Elenco Film:
                 {
-                    list.map((el) => (
+                    filmList.map((el) => (
+                        <li key={el.id}>
+                            {<Card film={el} />}
+                        </li>
+                    ))
+                }
+            </ul>
+            <ul> Elenco Serie:
+                {
+                    seriesList.map((el) => (
                         <li key={el.id}>
                             {<Card film={el} />}
                         </li>
