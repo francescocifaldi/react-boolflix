@@ -2,7 +2,6 @@
 import Card from './Card'
 
 export default function CardsContainer({ list }) {
-    console.log(list)
 
     return (
         <ul className='row'>

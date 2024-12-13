@@ -26,6 +26,8 @@ ul {
 
 .col-33 {
   max-width: calc(100%/3);
+  padding: 0 5px;
+  margin-bottom: 10px;
 }
 
 .debug {

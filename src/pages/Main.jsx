@@ -7,12 +7,12 @@ export default function Main() {
 
     return (
 
-        <div className="container debug">
+        <div className="container">
 
-            <h1>Elenco Film:</h1>
+            {filmList.length > 0 ? <><h1>Elenco Film:</h1></> : ''}
             <CardsContainer list={filmList} />
 
-            <h1>Elenco Serie:</h1>
+            {seriesList.length > 0 ? <><h1>Elenco Serie:</h1></> : ''}
             <CardsContainer list={seriesList} />
         </div>
 
