@@ -1,8 +1,5 @@
-
-import style from './Card.module.css'
-
-export default function Card({ film }) {
-    const { title, original_title, original_language, vote_average } = film
+export default function Card({ content }) {
+    const { title, original_title, original_language, vote_average } = content
 
     return (
         <div className='debug'>
