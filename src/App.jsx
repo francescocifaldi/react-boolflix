@@ -18,7 +18,13 @@ function App() {
       })
     axios.get(`${BASE_URI}search/tv?api_key=${MY_TOKEN}&query=${parm}`)
       .then(res => {
-        setSeriesList(res.data.results)
+        console.log(res.data.results[0])
+        const updatedData = res.data.results.map((item) => {
+          const { name, ...rest } = item; // Estrai `oldKey` e il resto delle chiavi
+          return { title: name, ...rest }; // Rinomina `oldKey` in `newKey`
+        });
+        console.log(updatedData[0])
+        setSeriesList(updatedData)
       })
   }
 
