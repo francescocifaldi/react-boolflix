@@ -4,6 +4,7 @@ const imgDimension = 'w342'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar as fullStar } from "@fortawesome/free-solid-svg-icons/faStar"
 import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons"
+import style from './Card.module.css'
 
 export default function Card({ content }) {
     const { title, original_title, original_language, vote_average, poster_path } = content
@@ -19,7 +20,7 @@ export default function Card({ content }) {
 
 
     return (
-        <div className='debug'>
+        <div className={`debug ${style.card}`}>
             <h2>{title}</h2>
 
             <p>Titolo originale:{original_title}</p>

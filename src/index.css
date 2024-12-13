@@ -19,6 +19,19 @@ ul {
   margin: 0 auto;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-33 {
+  max-width: calc(100%/3);
+}
+
 .debug {
   border: 2px dotted red;
+}
+
+img {
+  display: block;
 }

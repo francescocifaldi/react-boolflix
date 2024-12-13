@@ -1,0 +1,9 @@
+.card {
+    padding: 0 5px;
+    height: 100%;
+}
+
+.card img {
+    max-width: 100%;
+    aspect-ratio: 2/3;
+}

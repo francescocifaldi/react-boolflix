@@ -5,10 +5,10 @@ export default function CardsContainer({ list }) {
     console.log(list)
 
     return (
-        <ul className='debug'>
+        <ul className='row'>
             {
                 list.map((el) => (
-                    <li key={el.id}>
+                    <li key={el.id} className='col-33'>
                         {<Card content={el} />}
                     </li>
                 ))
