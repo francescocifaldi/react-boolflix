@@ -9,6 +9,7 @@ export default function Searchbar() {
     function onSubmit(e) {
         e.preventDefault()
         fetchResult(search)
+        setSearch('')
     }
 
     function onChange(e) {

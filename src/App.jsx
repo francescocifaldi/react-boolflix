@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import GlobalContext from './contexts/GlobalContext'
-import { BASE_URI, MY_TOKEN } from './config'
+import { BASE_URI, MY_TOKEN } from './utils/config'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import DefaultLayout from './layouts/DefaultLayout'
 import Main from './pages/Main'
@@ -20,9 +20,13 @@ function App() {
       .then(res => {
         console.log(res.data.results[0])
         const updatedData = res.data.results.map((item) => {
-          const { name, original_name, ...rest } = item; // Estrai `oldKey` e il resto delle chiavi
-          return { title: name, original_title: original_name, ...rest }; // Rinomina `oldKey` in `newKey`
-        });
+          // Rinomina `newKey` : `oldKey`
+          return {
+            title: item.name,
+            original_title: item.original_name,
+            ...item
+          }
+        })
         console.log(updatedData[0])
         setSeriesList(updatedData)
       })

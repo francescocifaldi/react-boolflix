@@ -1,5 +1,4 @@
 
-import style from './Card.module.css'
 import Card from './Card'
 
 export default function CardsContainer({ list }) {
