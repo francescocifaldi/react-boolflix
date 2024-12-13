@@ -20,8 +20,8 @@ function App() {
       .then(res => {
         console.log(res.data.results[0])
         const updatedData = res.data.results.map((item) => {
-          const { name, ...rest } = item; // Estrai `oldKey` e il resto delle chiavi
-          return { title: name, ...rest }; // Rinomina `oldKey` in `newKey`
+          const { name, original_name, ...rest } = item; // Estrai `oldKey` e il resto delle chiavi
+          return { title: name, original_title: original_name, ...rest }; // Rinomina `oldKey` in `newKey`
         });
         console.log(updatedData[0])
         setSeriesList(updatedData)

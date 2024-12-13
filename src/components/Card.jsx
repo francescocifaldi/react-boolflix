@@ -7,11 +7,11 @@ export default function Card({ film }) {
     return (
         <div className='debug'>
 
-            <p>{title}</p>
+            <h2>{title}</h2>
 
-            <p>{original_title}</p>
-            <p>{original_language}</p>
-            <p>{vote_average}</p>
+            <p>Titolo originale:{original_title}</p>
+            <p>Lingua originale:{original_language}</p>
+            <p>Voto:{vote_average}</p>
 
         </div>
     )

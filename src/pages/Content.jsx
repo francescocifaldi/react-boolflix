@@ -8,7 +8,9 @@ export default function Content() {
     return (
 
         <div className="container debug">
-            <ul> Elenco Film:
+
+            <h1>Elenco Film:</h1>
+            <ul>
                 {
                     filmList.map((el) => (
                         <li key={el.id}>
@@ -17,7 +19,9 @@ export default function Content() {
                     ))
                 }
             </ul>
-            <ul> Elenco Serie:
+
+            <h1>Elenco Serie:</h1>
+            <ul>
                 {
                     seriesList.map((el) => (
                         <li key={el.id}>
