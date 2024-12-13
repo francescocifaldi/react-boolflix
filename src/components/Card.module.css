@@ -3,7 +3,7 @@
     height: 100%;
 }
 
-.card img {
+.cover {
     max-width: 100%;
     aspect-ratio: 2/3;
 }

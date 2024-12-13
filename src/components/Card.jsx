@@ -18,19 +18,18 @@ export default function Card({ content }) {
         }
     }
 
+    /*            
+        <h2>{title}</h2>
+        <p>Titolo originale:{original_title}</p>
+        {flagsMap[original_language] ? <img src={flagsMap[original_language]} height={20} /> : <p>{original_language}</p>}
+        <p>{starArr}</p>
+    */
 
     return (
         <div className={`debug ${style.card}`}>
-            <h2>{title}</h2>
 
-            <p>Titolo originale:{original_title}</p>
 
-            {flagsMap[original_language] ? <img src={flagsMap[original_language]} height={20} /> : <p>{original_language}</p>}
-
-            <p>{starArr}</p>
-
-            <img src={`${IMG_BASE_URL}${imgDimension}${poster_path}`} alt="" />
-
-        </div>
+            <img src={`${IMG_BASE_URL}${imgDimension}${poster_path}`} alt="" className={style.cover} />
+        </div >
     )
 }
