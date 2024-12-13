@@ -1,10 +1,10 @@
-import Searchbar from "../components/Searchbar"
+import Header from "../components/Header"
 import { Outlet } from "react-router-dom"
 
 export default function DefalutLayout() {
     return (
         <>
-            <Searchbar />
+            <Header />
             <Outlet />
         </>
     )

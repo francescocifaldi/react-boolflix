@@ -18,12 +18,10 @@ export default function Searchbar() {
     }
 
     return (
-        <div className="container">
-            <form onSubmit={onSubmit} action="" className='form'>
-                <label htmlFor="search">Titolo</label>
-                <input onChange={onChange} id='title' name='title' value={search} type="text" placeholder='Contenuto da cercare' />
-                <input type="submit" value='VAI' />
-            </form>
-        </div>
+        <form onSubmit={onSubmit} action="" className='form'>
+            <label htmlFor="search">Titolo</label>
+            <input onChange={onChange} id='title' name='title' value={search} type="text" placeholder='Contenuto da cercare' />
+            <input type="submit" value='VAI' />
+        </form>
     )
 }
