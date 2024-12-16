@@ -11,14 +11,19 @@ function App() {
   const [filmList, setFilmList] = useState([])
   const [seriesList, setSeriesList] = useState([])
 
-  function fetchResult(parm) {
+  function fetchFilm(parm) {
     axios.get(`${BASE_URI}search/movie?api_key=${MY_TOKEN}&query=${parm}`)
       .then(res => {
         setFilmList(res.data.results)
       })
+      .catch((err) => {
+        console.error(err)
+      })
+  }
+
+  function fetchSeries(parm) {
     axios.get(`${BASE_URI}search/tv?api_key=${MY_TOKEN}&query=${parm}`)
       .then(res => {
-        console.log(res.data.results[0])
         const updatedData = res.data.results.map((item) => {
           // Rinomina `newKey` : `oldKey`
           return {
@@ -27,8 +32,10 @@ function App() {
             ...item
           }
         })
-        console.log(updatedData[0])
         setSeriesList(updatedData)
+      })
+      .catch((err) => {
+        console.error(err)
       })
   }
 
@@ -38,7 +45,7 @@ function App() {
 
   return (
     <>
-      <GlobalContext.Provider value={{ filmList, seriesList, fetchResult }}>
+      <GlobalContext.Provider value={{ filmList, seriesList, fetchFilm, fetchSeries }}>
         <BrowserRouter>
           <Routes>
             <Route element={<DefaultLayout />}>
